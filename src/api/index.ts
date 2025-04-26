@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import type { AxiosInstance } from 'axios';
 
 // 创建 axios 实例
 const api: AxiosInstance = axios.create({
@@ -25,10 +25,7 @@ api.interceptors.request.use(
 
 // 响应拦截器
 api.interceptors.response.use(
-  (response) => {
-    debugger
-    return response
-  },
+  (response) => response,
   (error) => {
     const { response } = error;
     if (response) {
